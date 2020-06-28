@@ -1,6 +1,10 @@
 fx_version 'adamant'
 game 'gta5'
 
+author 'SuperCoolNinja'
+description 'Simple teleporter'
+version '1.0.0'
+
 files {
     'json/**/*'
 }
