@@ -1,5 +1,5 @@
 local positionConfig = json.decode(LoadResourceFile(GetCurrentResourceName(), 'json/config.json'))
-local letWaitingSlow = true
+local Duree = 0
 local square = math.sqrt
 
 local function getDistance(a, b) 
@@ -15,7 +15,7 @@ end
 
 Citizen.CreateThread(function ()
     while true do
-        Citizen.Wait(15)
+        Duree = 1000
         local player = GetPlayerPed(-1)
         local playerLoc = GetEntityCoords(player)
 
@@ -41,16 +41,18 @@ Citizen.CreateThread(function ()
             local distanceZone1 = getDistance(playerLoc, zone1)
 
             if distanceZone1 <= 15 then
-                letWaitingSlow = false
+                Duree = 8
                 DrawMarker(tpZone.markerID, zone1.x, zone1.y, zone1.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerColor.r, tpZone.markerColor.g, tpZone.markerColor.b, tpZone.markerColor.a)
             end
             
             if distanceZone2 <= 15 then
-                letWaitingSlow = false
+                Duree = 8
                 DrawMarker(tpZone.markerID, zone2.x, zone2.y, zone2.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerColor.r, tpZone.markerColor.g, tpZone.markerColor.b, tpZone.markerColor.a)        
             end
 
             if distanceZone1 < 5 then
+                Duree = 8
+
                 if GetLastInputMethod(0) then
                     DisplayHelpAlert("~INPUT_TALK~ go ~g~inside")
                 else
@@ -67,6 +69,8 @@ Citizen.CreateThread(function ()
                     end
                 end
             elseif distanceZone2 < 5 then
+                Duree = 8
+
                 if GetLastInputMethod(0) then
                     DisplayHelpAlert("~INPUT_TALK~ go ~y~outside")
                 else
@@ -84,9 +88,6 @@ Citizen.CreateThread(function ()
                 end
             end
         end
-
-        if letWaitingSlow then
-            Citizen.Wait(500)
-        end
+        Citizen.Wait(Duree)
     end
 end)

@@ -3,7 +3,7 @@ game 'gta5'
 
 author 'SuperCoolNinja'
 description 'Simple teleporter'
-version '1.0.0'
+version '1.1.0'
 
 files {
     'json/**/*'
