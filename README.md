@@ -1,5 +1,5 @@
 # nTeleporter
- A simple teleporter, compatible with vehicle.
+ A simple teleporter optimized, compatible with vehicle.
 
 ## Screen :
 
