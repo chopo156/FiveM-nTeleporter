@@ -42,12 +42,12 @@ Citizen.CreateThread(function ()
 
             if distanceZone1 <= 15 then
                 letWaitingSlow = false
-                DrawMarker(tpZone.markerID, zone1.x, zone1.y, zone1.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerCouleur.r, tpZone.markerCouleur.g, tpZone.markerCouleur.b, tpZone.markerCouleur.a)
+                DrawMarker(tpZone.markerID, zone1.x, zone1.y, zone1.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerColor.r, tpZone.markerColor.g, tpZone.markerColor.b, tpZone.markerColor.a)
             end
             
             if distanceZone2 <= 15 then
                 letWaitingSlow = false
-                DrawMarker(tpZone.markerID, zone2.x, zone2.y, zone2.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerCouleur.r, tpZone.markerCouleur.g, tpZone.markerCouleur.b, tpZone.markerCouleur.a)        
+                DrawMarker(tpZone.markerID, zone2.x, zone2.y, zone2.z-1, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 0.5001, tpZone.markerColor.r, tpZone.markerColor.g, tpZone.markerColor.b, tpZone.markerColor.a)        
             end
 
             if distanceZone1 < 5 then
